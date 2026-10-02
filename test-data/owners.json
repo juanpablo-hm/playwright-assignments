@@ -1,0 +1,221 @@
+[
+    {
+        "firstName": "Valeria",
+        "lastName": "Montoya",
+        "address": "742 Evergreen Terrace",
+        "city": "Springfield",
+        "telephone": "2175550198",
+        "id": 2024,
+        "pets": [
+            {
+                "name": "Rocky",
+                "birthDate": "2018-03-14",
+                "type": {
+                    "name": "dog",
+                    "id": 1739
+                },
+                "id": 2029,
+                "ownerId": 2024,
+                "visits": [
+                {
+                    "date": "2025-01-15",
+                    "description": "rabies shot",
+                    "id": 4001,
+                    "petId": null
+                },
+                {
+                    "date": "2025-02-20",
+                    "description": "deworming",
+                    "id": 4011,
+                    "petId": null
+                },
+                {
+                    "date": "2025-04-05",
+                    "description": "limping on front leg",
+                    "id": 4012,
+                    "petId": null
+                },
+                {
+                    "date": "2025-05-28",
+                    "description": "x-ray follow up",
+                    "id": 4013,
+                    "petId": null
+                },
+                {
+                    "date": "2025-07-16",
+                    "description": "ear infection",
+                    "id": 4014,
+                    "petId": null
+                },
+                {
+                    "date": "2025-08-30",
+                    "description": "teeth cleaning",
+                    "id": 4015,
+                    "petId": null
+                },
+                {
+                    "date": "2025-10-22",
+                    "description": "allergy treatment",
+                    "id": 4016,
+                    "petId": null
+                },
+                {
+                    "date": "2026-01-09",
+                    "description": "flea and tick treatment",
+                    "id": 4017,
+                    "petId": null
+                },
+                {
+                    "date": "2026-03-10",
+                    "description": "annual checkup",
+                    "id": 4007,
+                    "petId": null
+                },
+                {
+                    "date": "2026-08-18",
+                    "description": "rabies shot",
+                    "id": 4018,
+                    "petId": null
+                }
+                ]
+            },
+
+            {
+                "name": "Mishi",
+                "birthDate": "2020-11-02",
+                "type": {
+                    "name": "cat",
+                    "id": 1738
+                },
+                "id": 2030,
+                "ownerId": 2024,
+                "visits": [
+                {
+                    "date": "2025-04-22",
+                    "description": "spayed",
+                    "id": 4003,
+                    "petId": null
+                }
+                ]
+            }
+        ]
+    },
+
+
+     {
+        "firstName": "Diego",
+        "lastName": "Salazar",
+        "address": "1580 Oak Ridge Ave.",
+        "city": "Austin",
+        "telephone": "5125553476",
+        "id": 2025,
+        "pets": [
+            {
+                "name": "Kiwi",
+                "birthDate": "2021-06-21",
+                "type": {
+                    "name": "bird",
+                    "id": 1742
+                },
+                "id": 2031,
+                "ownerId": 2025,
+                "visits": [
+                {
+                    "date": "2025-06-08",
+                    "description": "beak and nail trim",
+                    "id": 4004,
+                    "petId": null
+                }
+                ]
+            },
+
+            {
+                "name": "Slinky",
+                "birthDate": "2017-08-30",
+                "type": {
+                    "name": "snake",
+                    "id": 1741
+                },
+                "id": 2032,
+                "ownerId": 2025,
+                "visits": [
+                {
+                    "date": "2025-09-19",
+                    "description": "shedding problems",
+                    "id": 4005,
+                    "petId": null
+                }
+                ]
+            },
+
+            {
+                "name": "Rex",
+                "birthDate": "2019-01-17",
+                "type": {
+                    "name": "lizard",
+                    "id": 1740
+                },
+                "id": 2033,
+                "ownerId": 2025,
+                "visits": [
+                {
+                    "date": "2025-12-03",
+                    "description": "skin infection",
+                    "id": 4006,
+                    "petId": null
+                }
+                ]
+            },
+
+            {
+                "name": "Peanut",
+                "birthDate": "2023-04-09",
+                "type": {
+                    "name": "hamster",
+                    "id": 2438
+                },
+                "id": 2034,
+                "ownerId": 2025,
+                "visits": [
+                {
+                    "date": "2025-02-27",
+                    "description": "dental check",
+                    "id": 4002,
+                    "petId": null
+                },
+                {
+                    "date": "2026-05-14",
+                    "description": "weight control",
+                    "id": 4008,
+                    "petId": null
+                }
+                ]
+            },
+
+            {
+                "name": "Luna",
+                "birthDate": "2016-12-05",
+                "type": {
+                    "name": "cat",
+                    "id": 1738
+                },
+                "id": 2035,
+                "ownerId": 2025,
+                "visits": [
+                {
+                    "date": "2026-07-01",
+                    "description": "vaccination booster",
+                    "id": 4009,
+                    "petId": null
+                },
+                {
+                    "date": "2026-09-12",
+                    "description": "ear cleaning",
+                    "id": 4010,
+                    "petId": null
+                }
+                ]
+            }
+        ]
+    }
+]
