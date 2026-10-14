@@ -1,0 +1,42 @@
+[
+    {
+        "id": 3042,
+        "name": "radiology"
+    },
+    {
+        "id": 3043,
+        "name": "surgery"
+    },
+    {
+        "id": 3044,
+        "name": "dentistry"
+    },
+    {
+        "id": 3045,
+        "name": "cardiology"
+    },
+    {
+        "id": 3046,
+        "name": "dermatology"
+    },
+    {
+        "id": 3047,
+        "name": "oncology"
+    },
+    {
+        "id": 3048,
+        "name": "neurology"
+    },
+    {
+        "id": 3049,
+        "name": "ophthalmology"
+    },
+    {
+        "id": 3050,
+        "name": "anesthesiology"
+    },
+    {
+        "id": 3051,
+        "name": "nutrition"
+    }
+]
