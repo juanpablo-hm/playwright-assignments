@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import owners from "../test-data/owners.json";
+import expectedSpecialties from "../test-data/specialties.json"
 
 test.beforeEach(async ({ page }) => {
   //All Owners
@@ -12,10 +13,31 @@ test.beforeEach(async ({ page }) => {
     await route.fulfill({ json: owners[0] });
   });
 
+  //All Veterinarians Page
+  await page.route("*/**/api/vets", async (route) => {
+    const response = await route.fetch()
+    const responseJSON = await response.json()
+    responseJSON[4].specialties = expectedSpecialties
+    await route.fulfill({
+      json: responseJSON
+    })
+  });
+
+  //Selected Veterinarian Details
+  await page.route("*/**/api/vets/*", async (route) => {
+    const response = await route.fetch()
+    const responseJSON = await response.json()
+    responseJSON.specialties = expectedSpecialties
+    await route.fulfill({
+      json: responseJSON
+    })
+  });
+
   await page.goto("/");
+
 });
 
-test("TC: Validate owners list and visit list count", async ({ page }) => {
+test("Mocking API request: Validate owners list and visit list count", async ({ page }) => {
   //1. Navigate to the Owners page.
   await page.getByRole("button", { name: "OWNERS" }).click();
   await page.getByRole("link", { name: "SEARCH" }).click();
@@ -53,3 +75,21 @@ test("TC: Validate owners list and visit list count", async ({ page }) => {
   //7. Add the assertion that the length of the list with visits is 10
   await expect(page.locator("app-pet-list", { hasText: owners[0].pets[0].name }).locator("app-visit-list  table>tr")).toHaveCount(10);
 });
+
+test('Intercepting API Response: Validate specialties list for veterinarian', async ({ page }) => {
+
+  //1. Navigate to the Veterinarians page. Intercept the API response for the "vets" endpoint. 
+  await page.getByRole('button', { name: "VETERINARIANS" }).click()
+  await page.getByRole('link', { name: "ALL" }).click()
+
+  //2. For the current response, "Sharon Jenkins" does not have any specialties. Modify the response by adding 10 specialties for this vet
+  await expect(page.getByRole('row', { name: "Sharon Jenkins" }).locator('td div')).toHaveCount(10)
+
+  //3. Add an assertion that the 10 specialties added are displayed on the page for "Sharon Jenkins"
+  await page.getByRole('row', { name: "Sharon Jenkins" }).getByRole('button', { name: "Edit Vet" }).click()
+
+  const dropdownText = await page.locator('.selected-specialties').innerText()
+  const selectedSpecialties = dropdownText.split(',').map(s => s.trim())
+  await expect(selectedSpecialties).toHaveLength(10)
+
+})
