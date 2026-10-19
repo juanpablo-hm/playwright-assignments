@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
   await page.route("*/**/api/vets", async (route) => {
     const response = await route.fetch()
     const responseJSON = await response.json()
-    responseJSON[4].specialties = expectedSpecialties
+    responseJSON.find((vet: any) => vet.lastName === 'Jenkins').specialties = expectedSpecialties
     await route.fulfill({
       json: responseJSON
     })
@@ -90,11 +90,6 @@ test('Intercepting API Response: Validate specialties list for veterinarian', as
 
   const dropdownText = await page.locator('.selected-specialties').innerText()
   const selectedSpecialties = dropdownText.split(',').map(s => s.trim())
-  await expect(selectedSpecialties).toHaveLength(10)
+  expect(selectedSpecialties).toHaveLength(10)
 
 })
-
-  //6. The first pet should have a history of 10 visits displayed on the Owner Information page
-  //7. Add the assertion that the length of the list with visits is 10
-  await expect(page.locator("app-pet-list", { hasText: owners[0].pets[0].name }).locator("app-visit-list  table>tr")).toHaveCount(10);
-});
